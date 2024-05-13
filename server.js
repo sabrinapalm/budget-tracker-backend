@@ -27,6 +27,11 @@ mongoose
 
 app.use(express.json());
 
+// Root Route
+app.get('/', (req, res) => {
+  res.send('Welcome to the Budget Tracker API!');
+});
+
 // Use authentication and expense routes
 app.use('/api/auth', authRoutes);
 app.use('/api/expenses', expenseRoutes);
