@@ -1,0 +1,15 @@
+# Ignore node modules
+node_modules/
+
+# Ignore Environment variables
+.env
+
+# Ignore logs
+*.log
+
+# Ignore build directory
+/dist
+
+# Ignore other unnecessary files
+.DS_Store
+Thumbs.db
