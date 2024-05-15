@@ -35,12 +35,12 @@ const expenseSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
+    requires: true,
   },
   hidden: {
     type: Boolean,
     required: false,
   },
-
   shareCount: {
     type: Number,
     required: false,

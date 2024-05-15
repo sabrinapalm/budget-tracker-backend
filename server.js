@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import expenseRoutes from './app/routes/expenseRoutes.js';
 import authRoutes from './app/routes/authRoutes.js';
+import savingsRoutes from './app/routes/savingsRoutes.js';
 
 const app = express();
 
@@ -43,6 +44,7 @@ app.get('/', (req, res) => {
 // Use authentication and expense routes
 app.use('/api/auth', authRoutes);
 app.use('/api/expenses', expenseRoutes);
+app.use('/api/savings', savingsRoutes);
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, '0.0.0.0', () => {
