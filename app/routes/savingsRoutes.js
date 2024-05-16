@@ -41,4 +41,22 @@ router.get('/', async (req, res) => {
   }
 });
 
+// DELETE route to delete a specific investment
+router.delete('/:userId/:category', async (req, res) => {
+  const { userId, category } = req.params;
+
+  try {
+    let savingsEntry = await Savings.findOne({ user: userId });
+
+    if (savingsEntry) {
+      await Savings.updateOne({ user: userId }, { $unset: { [`investments.${category}`]: 1 } });
+      res.status(200).json({ message: `Investment category ${category} deleted successfully.` });
+    } else {
+      res.status(404).send('Savings entry not found');
+    }
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+});
+
 export default router;
