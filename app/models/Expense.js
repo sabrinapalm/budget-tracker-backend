@@ -12,6 +12,7 @@ const categoryEnum = [
   'loan',
   'streaming',
   'pets',
+  'operating',
 ];
 
 const expenseSchema = new mongoose.Schema({
